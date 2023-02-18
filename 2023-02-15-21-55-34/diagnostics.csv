@@ -1,0 +1,3031 @@
+Time,header.seq,header.stamp.secs,header.stamp.nsecs,header.frame_id,status
+1676469335.1220706,308,1676469334,775956009,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""22778""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""171""
+  - 
+    key: ""Tx sequence number:""
+    value: ""44""
+  - 
+    key: ""Rx total bytes:""
+    value: ""4974675""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2319502""
+  - 
+    key: ""Rx speed:""
+    value: ""34946.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50893.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""218""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""0.965524""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""MANUAL""
+  - 
+    key: ""System status""
+    value: ""Standby"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""38.9""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2166""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""10.000095""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.894208""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.490086""
+  - 
+    key: ""Last remote time (s)""
+    value: ""327.910940000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861267567""]"
+1676469335.1254587,309,1676469334,776028952,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""4974633""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""34946.000000""]"
+1676469336.2767086,310,1676469336,275952564,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""23414""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""39""
+  - 
+    key: ""Tx sequence number:""
+    value: ""51""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5010377""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2369567""
+  - 
+    key: ""Rx speed:""
+    value: ""35702.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50065.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""220""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""1.034483""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""OFFBOARD""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""44.6""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2181""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""10.000020""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.416197""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.499660""
+  - 
+    key: ""Last remote time (s)""
+    value: ""329.408717000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861295700""]"
+1676469336.2767282,311,1676469336,276032156,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5010335""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""35702.000000""]"
+1676469337.776732,312,1676469337,775939681,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""24043""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""156""
+  - 
+    key: ""Tx sequence number:""
+    value: ""61""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5046144""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2420212""
+  - 
+    key: ""Rx speed:""
+    value: ""35767.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50645.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""221""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""0.965520""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""OFFBOARD""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""41.5""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2196""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""10.000046""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.459696""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.500642""
+  - 
+    key: ""Last remote time (s)""
+    value: ""330.908712000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861328840""]"
+1676469337.7767808,313,1676469337,776006143,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5046102""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""35767.000000""]"
+1676469338.7765183,314,1676469338,776010923,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""24470""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""71""
+  - 
+    key: ""Tx sequence number:""
+    value: ""160""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5070226""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2454694""
+  - 
+    key: ""Rx speed:""
+    value: ""24082.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""34482.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""222""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""0.999999""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""OFFBOARD""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""41.6""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2206""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""10.000006""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.453715""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.501389""
+  - 
+    key: ""Last remote time (s)""
+    value: ""331.908736000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861351490""]"
+1676469338.7768466,315,1676469338,776119977,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5070184""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""24082.000000""]"
+1676469340.2769208,316,1676469340,276402418,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""25107""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""196""
+  - 
+    key: ""Tx sequence number:""
+    value: ""169""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5106255""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2505007""
+  - 
+    key: ""Rx speed:""
+    value: ""36029.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50313.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""224""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""0.999971""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""OFFBOARD""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""41.7""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2221""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""9.999727""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.508826""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.501108""
+  - 
+    key: ""Last remote time (s)""
+    value: ""333.408748000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861385822""]"
+1676469340.2769597,317,1676469340,276494528,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5106213""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""36029.000000""]"
+1676469341.7765794,318,1676469341,775940556,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""25738""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""59""
+  - 
+    key: ""Tx sequence number:""
+    value: ""179""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5142051""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2555652""
+  - 
+    key: ""Rx speed:""
+    value: ""35796.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50645.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""225""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""1.000004""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""OFFBOARD""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""41.2""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2236""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""10.000065""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.598139""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.502299""
+  - 
+    key: ""Last remote time (s)""
+    value: ""334.908659000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861414671""]"
+1676469341.776674,319,1676469341,776023184,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5142009""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""35796.000000""]"
+1676469343.2769692,320,1676469343,276294089,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""26374""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""183""
+  - 
+    key: ""Tx sequence number:""
+    value: ""186""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5178031""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2605790""
+  - 
+    key: ""Rx speed:""
+    value: ""35980.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50138.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""227""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""0.999975""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""OFFBOARD""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""41.6""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2251""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""9.999736""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.383716""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.502108""
+  - 
+    key: ""Last remote time (s)""
+    value: ""336.408591000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861448765""]"
+1676469343.2770026,321,1676469343,276385328,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5177989""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""35980.000000""]"
+1676469344.7772124,322,1676469344,775984203,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""27001""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""42""
+  - 
+    key: ""Tx sequence number:""
+    value: ""190""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5213783""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2655691""
+  - 
+    key: ""Rx speed:""
+    value: ""35752.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""49901.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""228""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""0.999997""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""OFFBOARD""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""40.8""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2266""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""9.999958""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.653471""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.502145""
+  - 
+    key: ""Last remote time (s)""
+    value: ""337.908839000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861479521""]"
+1676469344.7772493,323,1676469344,776398401,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5213741""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""35752.000000""]"
+1676469346.2765536,324,1676469346,275911422,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""27640""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""169""
+  - 
+    key: ""Tx sequence number:""
+    value: ""203""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5249922""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2706427""
+  - 
+    key: ""Rx speed:""
+    value: ""36139.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50736.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""230""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""1.000005""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""OFFBOARD""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""41.5""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2281""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""10.000063""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.639083""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.501839""
+  - 
+    key: ""Last remote time (s)""
+    value: ""339.408615000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861510992""]"
+1676469346.2766974,325,1676469346,276005087,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5249880""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""36139.000000""]"
+1676469347.77777,326,1676469347,776016132,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""28270""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""31""
+  - 
+    key: ""Tx sequence number:""
+    value: ""210""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5285909""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2756700""
+  - 
+    key: ""Rx speed:""
+    value: ""35987.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50273.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""231""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""0.965520""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""MANUAL""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""41.5""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2296""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""10.000019""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.406865""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.502076""
+  - 
+    key: ""Last remote time (s)""
+    value: ""340.908586000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861544132""]"
+1676469347.7783332,327,1676469347,776099131,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5285623""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""35743.000000""]"
+1676469349.276955,328,1676469349,275925691,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""28908""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""157""
+  - 
+    key: ""Tx sequence number:""
+    value: ""223""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5321959""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2807429""
+  - 
+    key: ""Rx speed:""
+    value: ""36050.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50729.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""233""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""1.034485""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""MANUAL""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""42.0""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2311""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""10.000024""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.433623""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.501642""
+  - 
+    key: ""Last remote time (s)""
+    value: ""342.408616000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861577034""]"
+1676469349.276987,329,1676469349,276008227,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5321673""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""36050.000000""]"
+1676469350.777878,330,1676469350,775957813,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""29542""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""23""
+  - 
+    key: ""Tx sequence number:""
+    value: ""233""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5357680""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2858074""
+  - 
+    key: ""Rx speed:""
+    value: ""35721.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50645.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""234""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""0.965518""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""MANUAL""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""42.2""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2326""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""10.000002""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.435901""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.501378""
+  - 
+    key: ""Last remote time (s)""
+    value: ""343.908589000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861611843""]"
+1676469350.777956,331,1676469350,776096515,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5357638""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""35965.000000""]"
+1676469351.7776291,332,1676469351,777005623,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""29964""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""189""
+  - 
+    key: ""Tx sequence number:""
+    value: ""70""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5381588""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2891768""
+  - 
+    key: ""Rx speed:""
+    value: ""23908.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""33694.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""235""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""0.999924""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""MANUAL""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""41.9""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2336""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""9.999240""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.374420""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.501403""
+  - 
+    key: ""Last remote time (s)""
+    value: ""344.908524000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861633301""]"
+1676469351.7777932,333,1676469351,777111362,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5381546""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""23908.000000""]"
+1676469353.2766316,334,1676469353,276038361,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""30601""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""58""
+  - 
+    key: ""Tx sequence number:""
+    value: ""79""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5417625""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2942205""
+  - 
+    key: ""Rx speed:""
+    value: ""36037.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50437.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""237""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""1.034480""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""MANUAL""
+  - 
+    key: ""System status""
+    value: ""Active"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""42.2""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2351""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""9.999980""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.604769""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.501941""
+  - 
+    key: ""Last remote time (s)""
+    value: ""346.408554000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861662388""]"
+1676469353.2766469,335,1676469353,276134619,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5417583""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""36037.000000""]"
+1676469354.7777004,336,1676469354,776055999,,"[level: 0
+name: ""mavros: FCU connection""
+message: ""connected""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""31234""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""179""
+  - 
+    key: ""Tx sequence number:""
+    value: ""85""
+  - 
+    key: ""Rx total bytes:""
+    value: ""5453060""
+  - 
+    key: ""Tx total bytes:""
+    value: ""2992230""
+  - 
+    key: ""Rx speed:""
+    value: ""35435.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""50025.000000"", level: 2
+name: ""mavros: GPS""
+message: ""No satellites""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Satellites visible""
+    value: ""0""
+  - 
+    key: ""Fix type""
+    value: ""0""
+  - 
+    key: ""EPH (m)""
+    value: ""Unknown""
+  - 
+    key: ""EPV (m)""
+    value: ""Unknown"", level: 1
+name: ""mavros: Mount""
+message: ""Can not diagnose in this targeting mode""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Mode""
+    value: ""255"", level: 0
+name: ""mavros: Heartbeat""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Heartbeats since startup""
+    value: ""238""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""0.965540""
+  - 
+    key: ""Vehicle type""
+    value: ""Quadrotor""
+  - 
+    key: ""Autopilot type""
+    value: ""PX4 Autopilot""
+  - 
+    key: ""Mode""
+    value: ""MANUAL""
+  - 
+    key: ""System status""
+    value: ""Standby"", level: 0
+name: ""mavros: System""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Sensor present""
+    value: ""0x1021802C""
+  - 
+    key: ""Sensor enabled""
+    value: ""0x1021800C""
+  - 
+    key: ""Sensor health""
+    value: ""0x1027800F""
+  - 
+    key: ""3D magnetometer""
+    value: ""Ok""
+  - 
+    key: ""absolute pressure""
+    value: ""Ok""
+  - 
+    key: ""motor outputs / control""
+    value: ""Ok""
+  - 
+    key: ""rc receiver""
+    value: ""Ok""
+  - 
+    key: ""AHRS subsystem health""
+    value: ""Ok""
+  - 
+    key: ""pre-arm check status. Always healthy when armed""
+    value: ""Ok""
+  - 
+    key: ""CPU Load (%)""
+    value: ""45.3""
+  - 
+    key: ""Drop rate (%)""
+    value: ""0.0""
+  - 
+    key: ""Errors comm""
+    value: ""0""
+  - 
+    key: ""Errors count #1""
+    value: ""0""
+  - 
+    key: ""Errors count #2""
+    value: ""0""
+  - 
+    key: ""Errors count #3""
+    value: ""0""
+  - 
+    key: ""Errors count #4""
+    value: ""0"", level: 1
+name: ""mavros: Battery""
+message: ""Low voltage""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Voltage""
+    value: ""0.00""
+  - 
+    key: ""Current""
+    value: ""nan""
+  - 
+    key: ""Remaining""
+    value: ""-1.0"", level: 0
+name: ""mavros: Time Sync""
+message: ""Normal""
+hardware_id: ""/dev/ttyACM0:921600""
+values: 
+  - 
+    key: ""Timesyncs since startup""
+    value: ""2366""
+  - 
+    key: ""Frequency (Hz)""
+    value: ""10.000240""
+  - 
+    key: ""Last RTT (ms)""
+    value: ""0.394346""
+  - 
+    key: ""Mean RTT (ms)""
+    value: ""0.501829""
+  - 
+    key: ""Last remote time (s)""
+    value: ""347.908492000""
+  - 
+    key: ""Estimated time offset (s)""
+    value: ""1676469006.861693859""]"
+1676469354.7777154,337,1676469354,776135979,,"[level: 0
+name: ""mavros: GCS bridge""
+message: ""connected""
+hardware_id: ""udp://@192.168.31.57""
+values: 
+  - 
+    key: ""Received packets:""
+    value: ""0""
+  - 
+    key: ""Dropped packets:""
+    value: ""0""
+  - 
+    key: ""Buffer overruns:""
+    value: ""0""
+  - 
+    key: ""Parse errors:""
+    value: ""0""
+  - 
+    key: ""Rx sequence number:""
+    value: ""0""
+  - 
+    key: ""Tx sequence number:""
+    value: ""0""
+  - 
+    key: ""Rx total bytes:""
+    value: ""0""
+  - 
+    key: ""Tx total bytes:""
+    value: ""5453018""
+  - 
+    key: ""Rx speed:""
+    value: ""0.000000""
+  - 
+    key: ""Tx speed:""
+    value: ""35435.000000""]"
