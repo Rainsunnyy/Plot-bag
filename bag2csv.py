@@ -1,11 +1,12 @@
 # import bagpy
 import csv
+import seaborn as sns
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-# from bagpy import bagreader
+from bagpy import bagreader
 from mpl_toolkits.mplot3d import Axes3D  # 导入库
-
+from matplotlib.backends.backend_pdf import PdfPages
 
 columns = ["Time",
            "pose.position.x",
@@ -30,40 +31,25 @@ columns6 = ["Time",
             "body_rate.z"]
 
 
-def bag2csv():
-    b = bagreader('2023-02-15-21-55-34.bag')
-
-    # LASER_MSG = b.message_by_topic('/mavros/local_position/pose')
-    # LASER_MSG
-    # df_laser = pd.read_csv(LASER_MSG)
-    # df_laser # prints laser data in the form of pandas dataframe
-
+def bag2csv(bag):
+    b = bagreader(bag)
+    
     csvfiles = []
     for t in b.topics:
         data = b.message_by_topic(t)
         csvfiles.append(data)
 
 
-def plot_states(bag):  # 2023-02-15-21-55-34
-    # fig1, ax1 = plt.subplots(4, 3)
-
+def plot_states(bag, bag2): 
     df = pd.read_csv(bag + "/mavros-local_position-pose.csv", usecols=columns)
     dn = pd.read_csv(bag + "/mavgnc-position_setpoint.csv", usecols=columns)
 
-    dm = pd.read_csv("2023-02-15-21-55-34/mavros-state.csv", usecols=columns2)
+    dm = pd.read_csv(bag + "/mavros-state.csv", usecols=columns2)
 
-    set_velo = pd.read_csv(
-        bag + "/mavgnc-velocity_setpoint.csv", usecols=columns3)
-    lo_velo = pd.read_csv(
-        bag + "/mavros-local_position-velocity_local.csv", usecols=columns3)
+    df2 = pd.read_csv(bag2 + "/mavros-local_position-pose.csv", usecols=columns)
+    dn2 = pd.read_csv(bag2 + "/mavgnc-position_setpoint.csv", usecols=columns)
 
-    set_att = pd.read_csv(bag + "/mavgnc-att_sp_euler.csv", usecols=columns4)
-    loc_att = pd.read_csv(bag + "/mavgnc-att_euler.csv", usecols=columns4)
-
-    set_rate = pd.read_csv(
-        bag + "/mavros-setpoint_raw-attitude.csv", usecols=columns6)
-    loc_rate = pd.read_csv(
-        bag + "/mavros-local_position-velocity_local.csv", usecols=columns5)
+    dm2 = pd.read_csv(bag2 + "/mavros-state.csv", usecols=columns2)
 
     df = df.rename(columns={"pose.position.x": 'x',
                             "pose.position.y": 'y',
@@ -72,40 +58,21 @@ def plot_states(bag):  # 2023-02-15-21-55-34
     dn = dn.rename(columns={"pose.position.x": 'x',
                             "pose.position.y": 'y',
                             "pose.position.z": 'z'})
+    df2= df2.rename(columns={"pose.position.x": 'x',
+                            "pose.position.y": 'y',
+                            "pose.position.z": 'z'})
 
-    set_velo = set_velo.rename(columns={"twist.linear.x": 'vx',
-                                        "twist.linear.y": 'vy',
-                                        "twist.linear.z": 'vz'})
-
-    lo_velo = lo_velo.rename(columns={"twist.linear.x": 'vx',
-                                      "twist.linear.y": 'vy',
-                                      "twist.linear.z": 'vz'})
-
-    set_att = set_att.rename(columns={"vector.x": 'qx',
-                                      "vector.y": 'qy',
-                                      "vector.z": 'qz'})
-
-    loc_att = loc_att.rename(columns={"vector.x": 'qx',
-                                      "vector.y": 'qy',
-                                      "vector.z": 'qz'})
-
-    set_rate = set_rate.rename(columns={"body_rate.x": 'p',
-                                        "body_rate.y": 'q',
-                                        "body_rate.z": 'r'})
-
-    loc_rate = loc_rate.rename(columns={"twist.angular.x": 'p',
-                                        "twist.angular.y": 'q',
-                                        "twist.angular.z": 'r'})
+    dn2 = dn2.rename(columns={"pose.position.x": 'x',
+                            "pose.position.y": 'y',
+                            "pose.position.z": 'z'})
 
     t = []
+    t2 = []
     tx = []
     ts = []
-    set_velo_t = []
-    lo_velo_t = []
-    set_att_t = []
-    loc_att_t = []
-    set_rate_t = []
-    loc_rate_t = []
+    t2 = []
+    tx2 = []
+    ts2 = []
 
     posx = []
     posy = []
@@ -113,32 +80,21 @@ def plot_states(bag):  # 2023-02-15-21-55-34
     setx = []
     sety = []
     setz = []
-
-    setvx = []
-    setvy = []
-    setvz = []
-    localvx = []
-    localvy = []
-    localvz = []
-
-    setqx = []
-    setqy = []
-    setqz = []
-    localqx = []
-    localqy = []
-    localqz = []
-
-    setp = []
-    setq = []
-    setr = []
-    localp = []
-    localq = []
-    localr = []
+    posx2 = []
+    posy2 = []
+    posz2 = []
+    setx2 = []
+    sety2 = []
+    setz2 = []
 
     for i in range(1, len(dm)):
         dm["Time"][i] = dm["Time"][i] - dm["Time"][0]
     dm["Time"][0] = 0
-    ##
+    
+    for i in range(1, len(dm2)):
+        dm2["Time"][i] = dm2["Time"][i] - dm2["Time"][0]
+    dm2["Time"][0] = 0
+    ##################################
     for i in range(1, len(df)):
         df.Time[i] = df.Time[i] - df.Time[0]
     df.Time[0] = 0.0
@@ -146,35 +102,22 @@ def plot_states(bag):  # 2023-02-15-21-55-34
     for i in range(1, len(dn)):
         dn["Time"][i] = dn["Time"][i] - dn["Time"][0]
     dn["Time"][0] = 0
-    ##
-    for i in range(1, len(set_velo)):
-        set_velo["Time"][i] = set_velo["Time"][i] - set_velo["Time"][0]
-    set_velo["Time"][0] = 0
+    
+    for i in range(1, len(df2)):
+        df2.Time[i] = df2.Time[i] - df2.Time[0]
+    df2.Time[0] = 0.0
 
-    for i in range(1, len(lo_velo)):
-        lo_velo["Time"][i] = lo_velo["Time"][i] - lo_velo["Time"][0]
-    lo_velo["Time"][0] = 0
-    ##
-    for i in range(1, len(set_att)):
-        set_att["Time"][i] = set_att["Time"][i] - set_att["Time"][0]
-    set_att["Time"][0] = 0
-
-    for i in range(1, len(loc_att)):
-        loc_att["Time"][i] = loc_att["Time"][i] - loc_att["Time"][0]
-    loc_att["Time"][0] = 0
-    ##
-    for i in range(1, len(set_rate)):
-        set_rate["Time"][i] = set_rate["Time"][i] - set_rate["Time"][0]
-    set_rate["Time"][0] = 0
-
-    for i in range(1, len(loc_rate)):
-        loc_rate["Time"][i] = loc_rate["Time"][i] - loc_rate["Time"][0]
-    loc_rate["Time"][0] = 0
-    ##
+    for i in range(1, len(dn2)):
+        dn2["Time"][i] = dn2["Time"][i] - dn2["Time"][0]
+    dn2["Time"][0] = 0
+    ##################################
     for i in range(1, len(dm)):
         if dm["mode"][i] == "OFFBOARD":
             t.append(dm.Time[i])
-    ########################
+    for i in range(1, len(dm2)):
+        if dm2["mode"][i] == "OFFBOARD":
+            t2.append(dm2.Time[i])
+    ##################################
     for i in range(1, len(df)):
         if df.Time[i] > t[0]:
             if df.Time[i] < t[-1]:
@@ -190,246 +133,83 @@ def plot_states(bag):  # 2023-02-15-21-55-34
                 setx.append(dn.x[i])
                 sety.append(dn.y[i])
                 setz.append(dn.z[i])
-    # 3
-    for i in range(1, len(set_velo)):
-        if set_velo.Time[i] > t[0]:
-            if set_velo.Time[i] < t[-1]:
-                set_velo_t.append(set_velo.Time[i])
-                setvx.append(set_velo.vx[i])
-                setvy.append(set_velo.vy[i])
-                setvz.append(set_velo.vz[i])
 
-    for i in range(1, len(lo_velo)):
-        if lo_velo.Time[i] > t[0]:
-            if lo_velo.Time[i] < t[-1]:
-                lo_velo_t.append(lo_velo.Time[i])
-                localvx.append(lo_velo.vx[i])
-                localvy.append(lo_velo.vy[i])
-                localvz.append(lo_velo.vz[i])
-    ##########################
-    for i in range(1, len(set_att)):
-        if set_att.Time[i] > t[0]:
-            if set_velo.Time[i] < t[-1]:
-                set_att_t.append(set_att.Time[i])
-                setqx.append(set_att.qx[i])
-                setqy.append(set_att.qy[i])
-                setqz.append(set_att.qz[i])
+    for i in range(1, len(df2)):
+        if df2.Time[i] > t[0]:
+            if df2.Time[i] < t[-1]:
+                tx2.append(df2.Time[i])
+                posx2.append(df2.x[i])
+                posy2.append(df2.y[i])
+                posz2.append(df2.z[i])
 
-    for i in range(1, len(loc_att)):
-        if loc_att.Time[i] > t[0]:
-            if loc_att.Time[i] < t[-1]:
-                loc_att_t.append(loc_att.Time[i])
-                localqx.append(loc_att.qx[i])
-                localqy.append(loc_att.qy[i])
-                localqz.append(loc_att.qz[i])
+    for i in range(1, len(dn2)):
+        if dn2.Time[i] > t[0]:
+            if dn2.Time[i] < t[-1]:
+                ts2.append(dn.Time[i])
+                setx2.append(dn2.x[i])
+                sety2.append(dn2.y[i])
+                setz2.append(dn2.z[i])
+    
+    fig1, ax1 = plt.subplots(3, 1)
+    sns.set_style("whitegrid")
+    sns.set()
+    
+    # tx2 = tx2 - tx2[0]
+    # ts2 = ts2 - ts2[0]
+    
+    data_plot = pd.DataFrame({"t":tx, "x":posx})
+    data = pd.DataFrame({"t":ts, "x":setx})
+    data_y = pd.DataFrame({"t":tx, "y":posy})
+    datay = pd.DataFrame({"t":ts, "y":sety})
+    data_z = pd.DataFrame({"t":tx, "z":posz})
+    dataz = pd.DataFrame({"t":ts, "z":setz})
 
-    ##########################
-    for i in range(1, len(set_rate)):
-        if set_rate.Time[i] > t[0]:
-            if set_rate.Time[i] < t[-1]:
-                set_rate_t.append(set_rate.Time[i])
-                setp.append(set_rate.p[i])
-                setq.append(set_rate.q[i])
-                setr.append(set_rate.r[i])
-
-    for i in range(1, len(loc_rate)):
-        if loc_rate.Time[i] > t[0]:
-            if loc_rate.Time[i] < t[-1]:
-                loc_rate_t.append(loc_rate.Time[i])
-                localp.append(loc_rate.p[i])
-                localq.append(loc_rate.q[i])
-                localr.append(loc_rate.r[i])
-
-    tx = tx - tx[0]
-    ts = ts - ts[0]
-    set_velo_t = set_velo_t - set_velo_t[0]
-    lo_velo_t = lo_velo_t - lo_velo_t[0]
-    set_att_t = set_att_t - set_att_t[0]
-    loc_att_t = loc_att_t - loc_att_t[0]
-
-    #####################
-    plt.subplot(4, 3, 1)
-    plt.subplots_adjust(wspace=0.2, hspace=0.3)
-
-    plt.plot(tx, posx, color="blue", label='real_position')
-    plt.plot(ts, setx, color="red", label='set_position')
-    plt.title("Position_X")
-    plt.grid(axis='both')
-    plt.ylabel('X [m]')
-    plt.legend()
-
-    plt.subplot(4, 3, 2)
-    plt.plot(tx, posy, color="blue", label='real_position')
-    plt.plot(ts, sety, color="red", label='set_position')
-    plt.title("Position_Y")
-    plt.grid(axis='both')
-    plt.ylabel('Y [m]')
-    plt.legend()
-
-    plt.subplot(4, 3, 3)
-    plt.plot(tx, posz, color="blue", label='real_position')
-    plt.plot(ts, setz, color="red", label='set_position')
-    plt.title("Position_Z")
-    plt.grid(axis='both')
-    plt.ylabel('Z [m]')
-    plt.legend()
-
-    ##################
-    plt.subplot(4, 3, 4)
-    plt.plot(lo_velo_t, localvx, color="blue", label='real_position')
-    plt.plot(set_velo_t, setvx, color="red", label='set_position')
-    plt.title("Velocity_X")
-    plt.grid(axis='both')
-    plt.ylabel('Vx [m/s]')
-    plt.legend()
-
-    plt.subplot(4, 3, 5)
-    plt.plot(lo_velo_t, localvy, color="blue", label='real_position')
-    plt.plot(set_velo_t, setvy, color="red", label='set_position')
-    plt.title("Velocity_Y")
-    plt.grid(axis='both')
-    plt.ylabel('Vy [m/s]')
-    plt.legend()
-
-    plt.subplot(4, 3, 6)
-    plt.plot(lo_velo_t, localvz, color="blue", label='real_position')
-    plt.plot(set_velo_t, setvz, color="red", label='set_position')
-    plt.title("Velocity_Z")
-    plt.grid(axis='both')
-    plt.ylabel('Vz [m/s]')
-    plt.legend()
-
-    ########################
-    plt.subplot(4, 3, 7)
-    plt.plot(loc_att_t, localqx, color="blue", label='real_position')
-    plt.plot(set_att_t, setqx, color="red", label='set_position')
-    plt.title("Attitude_X")
-    plt.grid(axis='both')
-    plt.ylabel('Roll [deg]')
-    plt.legend()
-
-    plt.subplot(4, 3, 8)
-    plt.plot(loc_att_t, localqy, color="blue", label='real_position')
-    plt.plot(set_att_t, setqy, color="red", label='set_position')
-    plt.title("Attitude_Y")
-    plt.grid(axis='both')
-    plt.ylabel('Pitch [deg]')
-    plt.legend()
-
-    plt.subplot(4, 3, 9)
-    plt.plot(loc_att_t, localqz, color="blue", label='real_position')
-    plt.plot(set_att_t, setqz, color="red", label='set_position')
-    plt.title("Attitude_Z")
-    plt.grid(axis='both')
-    plt.ylabel('Yaw [deg]')
-    plt.legend()
-
-    #######################
-    plt.subplot(4, 3, 10)
-    plt.plot(loc_rate_t, localp, color="blue", label='real_position')
-    plt.plot(set_rate_t, setp, color="red", label='set_position')
-    plt.title("Body_Rate_X")
-    plt.grid(axis='both')
-    plt.ylabel('P  [rad/s]')
-    plt.xlabel('t [s]')
-    plt.legend()
-
-    plt.subplot(4, 3, 11)
-    plt.plot(loc_rate_t, localq, color="blue", label='real_position')
-    plt.plot(set_rate_t, setq, color="red", label='set_position')
-    plt.title("Body_Rate_Y")
-    plt.grid(axis='both')
-    plt.ylabel('Q [rad/s]')
-    plt.xlabel('t [s]')
-    plt.legend()
-
-    plt.subplot(4, 3, 12)
-    plt.plot(loc_rate_t, localr, color="blue", label='real_position')
-    plt.plot(set_rate_t, setr, color="red", label='set_position')
-    plt.title("Body_Rate_Z")
-    plt.grid(axis='both')
-    plt.ylabel('R [rad/s]')
-    plt.xlabel('t [s]')
-    plt.legend()
-
-    plt.suptitle("Quadrotor Real Data")
-    plt.show()
-
-
-def csv2plt():
-    plt.rcParams["figure.figsize"] = [7.50, 3.50]
-    plt.rcParams["figure.autolayout"] = True
-
-    columns = ["Time", "pose.position.x", "pose.position.y", "pose.position.z"]
-    columns2 = ["Time", "mode"]
-    df = pd.read_csv(
-        "2023-02-11-16-31-27/mavros-local_position-pose.csv", usecols=columns)
-    dm = pd.read_csv("2023-02-11-16-31-27/mavros-state.csv", usecols=columns2)
-    df = df.rename(columns={"pose.position.x": 'x',
-                   "pose.position.y": 'y', "pose.position.z": 'z'})
-    t = []
-    posx = []
-    tx = []
-
-    for i in range(1, len(df)):
-        df.Time[i] = df.Time[i] - df.Time[0]
-    df.Time[0] = 0.0
-
-    for i in range(1, len(dm)):
-        dm["Time"][i] = dm["Time"][i] - dm["Time"][0]
-    dm["Time"][0] = 0
-    # print(dm["Time"])
-
-    for i in range(1, len(dm)):
-        if dm["mode"][i] == "OFFBOARD":
-            t.append(dm.Time[i])
-
-    for i in range(1, len(df)):
-        if df.Time[i] > t[0]:
-            if df.Time[i] < t[-1]:
-                tx.append(df.Time[i])
-                posx.append(df.x[i])
-
-    tx = tx - tx[0]
-
-    # print(tx)
-    plt.plot(tx, posx)
+    data_plot2 = pd.DataFrame({"t":tx2, "x":posx2})
+    data2 = pd.DataFrame({"t":ts2, "x":setx2})
+    data_y2 = pd.DataFrame({"t":tx2, "y":posy2})
+    datay2 = pd.DataFrame({"t":ts2, "y":sety2})
+    data_z2 = pd.DataFrame({"t":tx2, "z":posz2})
+    dataz2 = pd.DataFrame({"t":ts2, "z":setz2})
+    
+    
+    
+    sns.lineplot(x = "t", y = "x", data=data_plot, label='UAV0', color= "dodgerblue", ax=ax1[0])
+    sns.lineplot(x = "t", y = "x", data=data, linestyle='--', label='reference', color= "dodgerblue", ax=ax1[0])
+    sns.lineplot(x = "t", y = "x", data=data_plot2, label='UAV1', color= "tomato", ax=ax1[0])
+    sns.lineplot(x = "t", y = "x", data=data2, linestyle='--', label='reference', color= "tomato", ax=ax1[0])
+    
+    sns.lineplot(x = "t", y = "y", data=data_y, label='UAV0', color= "dodgerblue", ax=ax1[1])
+    sns.lineplot(x = "t", y = "y", data=datay, linestyle='--', label='reference', color= "dodgerblue", ax=ax1[1])
+    sns.lineplot(x = "t", y = "y", data=data_y2, label='UAV1', color= "tomato", ax=ax1[1])
+    sns.lineplot(x = "t", y = "y", data=datay2, linestyle='--', label='reference', color= "tomato", ax=ax1[1])
+        
+    sns.lineplot(x = "t", y = "z", data=data_z, label='UAV0', color= "dodgerblue", ax=ax1[2])
+    sns.lineplot(x = "t", y = "z", data=dataz, linestyle='--', label='reference', color= "dodgerblue", ax=ax1[2])
+    sns.lineplot(x = "t", y = "z", data=data_z2, label='UAV1', color= "tomato", ax=ax1[2])
+    sns.lineplot(x = "t", y = "z", data=dataz2, linestyle='--', label='reference', color= "tomato", ax=ax1[2])
+    # plt.xlim(11, 15.8)
     plt.xlabel("t")
     plt.ylabel("x")
     plt.show()
-
-
-def plot():
-    time = 0
-    t = []
-    x = []
-    y = []
-    z = []
-    fig1, ax1 = plt.subplots(4, 3)
-    with open('2023-02-11-16-31-27/mavros-local_position-pose.csv', 'r') as csvfile:
-        plots = csv.reader(csvfile, delimiter=",")
-        next(plots)
-        for row in plots:
-            t.append(time)
-            x.append(row[5])
-            y.append(row[6])
-            z.append(row[7])
-            time = time + 1
-    # print(x)
-    ax1[0, 0].plot(t, x, label='real')
-    # ax1[0,0].plot(self.time,self.position_cmd[:,0],label='cmd')
-    ax1[0, 0].set_ylabel('x')
-    ax1[0, 0].set_xlabel('t')
-    ax1[0, 1].plot(t, y, label='real')
-    ax1[0, 1].set_ylabel('y')
-    ax1[0, 1].set_xlabel('t')
-    # ax1[0,1].plot(self.time,self.position_cmd[:,1])
-    ax1[0, 2].plot(t, z, label='real')
-    # ax1[0,2].plot(self.time,self.position_cmd[:,2])
-    ax1[0, 2].set_ylabel('z')
-    ax1[0, 2].set_xlabel('t')
-    ax1[0, 0].legend()
-    plt.show()
+            
+    # fig1, ax1 = plt.subplots(2, 3)
+    # plt.subplots_adjust(top=0.9, bottom= 0.6, left=0.035, right=0.985, hspace=0.5, wspace=0.12)
+    # ax1[0, 0].plot(tx, posx, color="tomato", label='real_position')
+    # ax1[0, 0].plot(ts, setx, color="dodgerblue", label='set_position')
+    # ax1[0, 0].set_xlim(10.5, 16)
+    # ax1[0, 0].set_ylabel('X [m]')
+    # ax1[0, 0].legend()
+    
+    # ax1[0, 1].plot(tx, posy, color="tomato", label='real_position')
+    # ax1[0, 1].plot(ts, sety, color="dodgerblue", label='set_position')
+    # ax1[0, 1].set_xlim(10.5, 16)
+    # ax1[0, 1].set_ylabel('Y [m]')
+    # ax1[0, 1].legend()
+    # ax1[0, 1].set_title("UAV0")
+    # ax1[1, 1].set_title("UAV1")
+    # plt.suptitle("Quadrotor Real Data")
+    
+    # plt.show()
 
 
 def plot_3d(bag1, bag2):  # 2023-02-11-16-31-27 2023-02-11-16-31-28
@@ -504,19 +284,351 @@ def plot_3d(bag1, bag2):  # 2023-02-11-16-31-27 2023-02-11-16-31-28
                 sety.append(dn.y[i])
                 setz.append(dn.z[i])
 
-    plt.subplot(projection='3d')
-    # plt.subplot()
-    plt.plot(posx, posy, posz, color="blue", label="UAV0")
-    plt.plot(setx, sety, setz, color="red", label="UAV1")
-    plt.xlabel('X')
-    plt.ylabel('Y')
-    plt.title('Trajectory')
-    plt.legend()
+    plt.style.use('classic')
+    # print(len(posx))
+    del setx[165: 570]
+    del sety[165: 570]
+    del setz[165: 570]
+
+    del posx[300: 540]
+    del posy[300: 540]
+    del posz[300: 540]
+    del posx[0: 110]
+    del posy[0: 110]
+    del posz[0: 110]
+    
+    # plt.subplot(projection='3d')
+    # # plt.subplot()
+    # plt.xlim((-2, 2))
+    # plt.ylim((-2, 2))
+    # plt.zlim((-1, 1))
+    
+    # plt.plot(posx, posy, posz, color="blue", label="UAV0")
+    # # plt.plot(setx, sety, setz, color="red", label="UAV1")
+    # plt.xlabel('X[m]')
+    # plt.ylabel('Y[m]')
+    # plt.title('Trajectory')
+    # plt.legend()
+    # plt.show()
+    fig = plt.figure()
+    ax = Axes3D(fig)
+    ax.view_init(elev=13, azim=60)
+    ax.plot3D(posx, posy, posz, 'tomato', linewidth=4, label='UAV0')
+    ax.plot3D(setx, sety, setz,'dodgerblue', linewidth=4, label='UAV1')
+    ax.text3D(0, -0.25, 2, "Gate1", fontsize=15)
+    ax.text3D(1.2, 0, 2, "Gate2", fontsize=15)
+    ax.plot3D([-0.3, -0.3, -0.3, -0.3, -0.3], [-0.5, 0, 0, -0.5, -0.5], [1, 1, 2, 2, 1], 'orange', linewidth=8)
+    ax.plot3D([-0.3, -0.3, -0.3, -0.3, -0.3], [-0.5, 0, 0, -0.5, -0.5], [1, 1, 2, 2, 1], 'orange', linewidth=8)
+    ax.plot3D([0.8, 1.5, 1.5, 0.8, 0.8], [0, 0, 0, 0, 0], [1, 1, 2, 2, 1], 'orange', linewidth=8)
+    ax.plot3D([0.8, 1.5, 1.5, 0.8, 0.8], [0, 0, 0, 0, 0], [1, 1, 2, 2, 1], 'orange', linewidth=8)
+
+
+    x = np.linspace(-2.3, 2.3, 9)
+    y = np.linspace(-1.3, 1.3, 9)
+    z = np.linspace(0, 2.5, 9)
+    X, Y = np.meshgrid(x, y)
+    T, Z = np.meshgrid(y, z)
+    ax.plot_surface(X, Y, Z = X * 0 + 0, color='white', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X, Y, Z = X * 0 + 2.5, color='white', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X, Y = X * 0 - 1.3, Z = Z, color='white', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X, Y = X * 0 + 1.3, Z = Z, color='white', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X = X * 0 - 2.3, Y = T, Z = Z, color='white', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X = X * 0 + 2.3, Y = T, Z = Z, color='white', alpha=0.1, edgecolors='white')
+
+    x2 = np.linspace(-2, 2, 9)
+    y2 = np.linspace(-1, 1, 9)
+    z2 = np.linspace(1, 2, 9)
+    X2, Y2 = np.meshgrid(x2, y2)
+    T2, Z2 = np.meshgrid(y2, z2)
+    
+    ax.plot_surface(X = X2, Y = Y2, Z = X2 * 0 + 1, color='navajowhite', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X = X2, Y = Y2, Z = X2 * 0 + 2, color='navajowhite', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X = X2, Y = X2 * 0 - 1, Z = Z2, color='navajowhite', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X = X2, Y = X2 * 0 + 1, Z = Z2, color='navajowhite', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X = X2 * 0 - 2, Y = T2, Z = Z2, color='navajowhite', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X = X2 * 0 + 2, Y = T2, Z = Z2, color='navajowhite', alpha=0.1, edgecolors='white')
+
+    ax.scatter3D(posx[0], posy[0], posz[0], linewidth=2)
+    ax.scatter3D(setx[0], sety[0], setz[0], linewidth=2)
+    ax.text3D(posx[0]+0.2, posy[0]+0.2, posz[0]+0.2, "start", fontsize=20)
+    ax.text3D(setx[0], sety[0], setz[0], "start", fontsize=20)
+    ax.scatter3D(posx[len(posx)-1], posy[len(posy)-1], posz[len(posz)-1], linewidth=2)
+    ax.scatter3D(setx[len(setx)-1], sety[len(sety)-1], setz[len(setz)-1], linewidth=2)
+    ax.text3D(posx[len(posx)-1], posy[len(posy)-1], posz[len(posz)-1], "end", fontsize=20)
+    ax.text3D(setx[len(setx)-1], sety[len(sety)-1], setz[len(setz)-1], "end", fontsize=20)
+    
+    ax.w_xaxis.set_pane_color((1.0, 1.0, 1, 1))
+    ax.w_zaxis.set_pane_color((1.0, 1.0, 1, 1))
+    ax.w_zaxis.set_pane_color((1.0, 1.0, 1, 1))
+    
+    # ax.annotate('text', xy=(posx[0], posy[0]), arrowprops=dict(arrowstyle="->", connectionstyle="arc3"))
+    ax.set_xlim(-2.3, 2.3)
+    ax.set_xlabel("X [m]")
+    ax.set_ylim(-1.3, 1.3)
+    ax.set_ylabel("Y [m]")
+    ax.set_zlim(0, 2.5)
+    ax.set_zlabel("Z [m]")
+    
+    ax.set_title('Two UAVs Trajectories')
+    
+    ax.legend()
+    plt.gca().set_box_aspect((3, 2, 0.5))
+    # plt.axis('off')
+
+    plt.show()
+    
+
+def plot_sim(bag):
+    columns = ["Time",
+               "pose.position.x",
+               "pose.position.y",
+               "pose.position.z"]
+
+    df = pd.read_csv(
+        bag + "/offb1_node-fly_point.csv", usecols=columns)
+
+    d2 = pd.read_csv(
+        bag + "/offb2_node-fly_point.csv", usecols=columns)
+    d3 = pd.read_csv(
+        bag + "/offb3_node-fly_point.csv", usecols=columns)
+
+    df = df.rename(columns={"pose.position.x": 'x',
+                            "pose.position.y": 'y',
+                            "pose.position.z": 'z', })
+    d2 = d2.rename(columns={"pose.position.x": 'x',
+                            "pose.position.y": 'y',
+                            "pose.position.z": 'z', })
+    d3 = d3.rename(columns={"pose.position.x": 'x',
+                            "pose.position.y": 'y',
+                            "pose.position.z": 'z', })
+
+    posx = []
+    posy = []
+    posz = []
+
+    pos2x = []
+    pos2y = []
+    pos2z = []
+    
+    pos3x = []
+    pos3y = []
+    pos3z = []
+    
+    for i in range(1, len(df)):
+        posx.append(df.x[i])
+        posy.append(df.y[i])
+        posz.append(df.z[i])
+
+    for i in range(1, len(d2)):
+        pos2x.append(d2.x[i])
+        pos2y.append(d2.y[i])
+        pos2z.append(d2.z[i])
+
+    for i in range(1, len(d3)):
+        pos3x.append(d3.x[i])
+        pos3y.append(d3.y[i])
+        pos3z.append(d3.z[i])
+
+    # plt.style.use('classic')
+    
+    fig = plt.figure()
+    ax = Axes3D(fig)
+    ax.view_init(elev=13, azim=60)
+
+    ax.set_xlim3d([10, 40])
+    ax.set_ylim3d([10, 40])
+    ax.set_zlim3d([1, 7])
+    
+    # print(len(posx))
+    del posx[1280:1401]
+    del posy[1280:1401]
+    del posz[1280:1401]
+
+    del pos2x[1280:1401]
+    del pos2y[1280:1401]
+    del pos2z[1280:1401]
+
+    del pos3x[1280:1401]
+    del pos3y[1280:1401]
+    del pos3z[1280:1401]
+    
+    # ax.get_proj = lambda: np.dot(Axes3D.get_proj(ax), np.diag([1.8, 1.8, 0.5, 1]))
+    ax.plot3D(posx, posy, posz, 'red', linewidth=3, label='UAV1', alpha=0.8)
+    ax.plot3D(pos2x, pos2y, pos2z, 'steelblue', linewidth=3, label='UAV2', alpha=0.8)# dodgerbluetomato
+    ax.plot3D(pos3x, pos3y, pos3z, 'gray', linewidth=3, label='UAV3', alpha=0.8)
+
+
+    x = np.linspace(10, 45, 2)
+    y = np.linspace(10, 41, 2)
+    z = np.linspace(1, 7, 2)
+    X, Y = np.meshgrid(x, y)
+    T, Z = np.meshgrid(y, z)
+    ax.plot_surface(X, Y, Z = X * 0 + 1, color='lightblue', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X, Y, Z = X * 0 + 7, color='lightblue', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X, Y = X * 0 + 10, Z = Z, color='lightblue', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X, Y = X * 0 + 41, Z = Z, color='lightblue', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X = X * 0 + 10, Y = T, Z = Z, color='lightblue', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X = X * 0 + 45, Y = T, Z = Z, color='lightblue', alpha=0.1, edgecolors='white')
+    
+    # ax.text3D(0, 0.2, 1.4, "Gate1")
+    # ax.text3D(1.2, 0, 1.4, "Gate2")
+    # ax.plot3D([33, 37, 37, 33, 33], [30, 30, 30, 30, 30], [3, 3, 5, 5, 3], 'darkred', linewidth=8)
+    # ax.plot3D([33, 37, 37, 33, 33], [30, 30, 30, 30, 30], [3, 3, 5, 5, 3], 'darkred', linewidth=8)
+    # ax.plot3D([0.5, 1.5, 1.5, 0.5, 0.5], [0, 0, 0, 0, 0], [1, 1, 2, 2, 1], 'darkred', linewidth=8)
+
+    ax.set_xlabel("X [m]")
+    ax.set_ylabel("Y [m]")
+    ax.set_zlabel("Z [m]")
+ 
+    plt.gca().set_box_aspect((5, 4, 2))
+    ax.set_title('Three UAVs Trajectories Simulation')
+    ax.legend()
+    ax.axis('off')
+    plt.show()
+
+
+def plot_sim_five(bag):
+    columns = ["Time",
+               "pose.position.x",
+               "pose.position.y",
+               "pose.position.z"]
+
+    df = pd.read_csv(
+        bag + "/offb1_node-fly_point.csv", usecols=columns)
+
+    d2 = pd.read_csv(
+        bag + "/offb2_node-fly_point.csv", usecols=columns)
+    d3 = pd.read_csv(
+        bag + "/offb3_node-fly_point.csv", usecols=columns)
+    d4 = pd.read_csv(
+        bag + "/offb4_node-fly_point.csv", usecols=columns)
+    d5 = pd.read_csv(
+        bag + "/offb5_node-fly_point.csv", usecols=columns)
+
+    df = df.rename(columns={"pose.position.x": 'x',
+                            "pose.position.y": 'y',
+                            "pose.position.z": 'z', })
+    d2 = d2.rename(columns={"pose.position.x": 'x',
+                            "pose.position.y": 'y',
+                            "pose.position.z": 'z', })
+    d3 = d3.rename(columns={"pose.position.x": 'x',
+                            "pose.position.y": 'y',
+                            "pose.position.z": 'z', })
+    d4 = d4.rename(columns={"pose.position.x": 'x',
+                            "pose.position.y": 'y',
+                            "pose.position.z": 'z', })
+    d5 = d5.rename(columns={"pose.position.x": 'x',
+                            "pose.position.y": 'y',
+                            "pose.position.z": 'z', })
+
+    posx = []
+    posy = []
+    posz = []
+
+    pos2x = []
+    pos2y = []
+    pos2z = []
+    
+    pos3x = []
+    pos3y = []
+    pos3z = []
+
+    pos4x = []
+    pos4y = []
+    pos4z = []
+    
+    pos5x = []
+    pos5y = []
+    pos5z = []
+    
+    for i in range(1, len(df)):
+        posx.append(df.x[i])
+        posy.append(df.y[i])
+        posz.append(df.z[i])
+
+    for i in range(1, len(d2)):
+        pos2x.append(d2.x[i])
+        pos2y.append(d2.y[i])
+        pos2z.append(d2.z[i])
+
+    for i in range(1, len(d3)):
+        pos3x.append(d3.x[i])
+        pos3y.append(d3.y[i])
+        pos3z.append(d3.z[i])
+
+    for i in range(1, len(d4)):
+        pos4x.append(d4.x[i])
+        pos4y.append(d4.y[i])
+        pos4z.append(d4.z[i])
+
+    for i in range(1, len(d5)):
+        pos5x.append(d5.x[i])
+        pos5y.append(d5.y[i])
+        pos5z.append(d5.z[i])
+
+    # plt.style.use('classic')
+    
+    fig = plt.figure()
+    ax = Axes3D(fig)
+    ax.view_init(elev=13, azim=60)
+
+    ax.set_xlim3d([10, 40])
+    ax.set_ylim3d([10, 40])
+    ax.set_zlim3d([1, 7])
+    
+    # print(len(posx))
+    # del posx[1280:1401]
+    # del posy[1280:1401]
+    # del posz[1280:1401]
+
+    # del pos2x[1280:1401]
+    # del pos2y[1280:1401]
+    # del pos2z[1280:1401]
+
+    # del pos3x[1280:1401]
+    # del pos3y[1280:1401]
+    # del pos3z[1280:1401]
+    
+    # ax.get_proj = lambda: np.dot(Axes3D.get_proj(ax), np.diag([1.8, 1.8, 0.5, 1]))
+    ax.plot3D(posx, posy, posz, 'red', linewidth=3, label='UAV1', alpha=0.8)
+    ax.plot3D(pos2x, pos2y, pos2z, 'steelblue', linewidth=3, label='UAV2', alpha=0.8)# dodgerbluetomato
+    ax.plot3D(pos3x, pos3y, pos3z, 'gray', linewidth=3, label='UAV3', alpha=0.8)
+    ax.plot3D(pos4x, pos4y, pos4z, 'yellow', linewidth=3, label='UAV4', alpha=0.8)
+    ax.plot3D(pos5x, pos5y, pos5z, 'green', linewidth=3, label='UAV5', alpha=0.8)# dodgerbluetomato
+
+
+    x = np.linspace(10, 45, 2)
+    y = np.linspace(10, 41, 2)
+    z = np.linspace(1, 7, 2)
+    X, Y = np.meshgrid(x, y)
+    T, Z = np.meshgrid(y, z)
+    ax.plot_surface(X, Y, Z = X * 0 + 1, color='lightblue', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X, Y, Z = X * 0 + 7, color='lightblue', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X, Y = X * 0 + 10, Z = Z, color='lightblue', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X, Y = X * 0 + 41, Z = Z, color='lightblue', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X = X * 0 + 10, Y = T, Z = Z, color='lightblue', alpha=0.1, edgecolors='white')
+    ax.plot_surface(X = X * 0 + 45, Y = T, Z = Z, color='lightblue', alpha=0.1, edgecolors='white')
+    
+    # ax.text3D(0, 0.2, 1.4, "Gate1")
+    # ax.text3D(1.2, 0, 1.4, "Gate2")
+    # ax.plot3D([33, 37, 37, 33, 33], [30, 30, 30, 30, 30], [3, 3, 5, 5, 3], 'darkred', linewidth=8)
+    # ax.plot3D([33, 37, 37, 33, 33], [30, 30, 30, 30, 30], [3, 3, 5, 5, 3], 'darkred', linewidth=8)
+    # ax.plot3D([0.5, 1.5, 1.5, 0.5, 0.5], [0, 0, 0, 0, 0], [1, 1, 2, 2, 1], 'darkred', linewidth=8)
+
+    ax.set_xlabel("X [m]")
+    ax.set_ylabel("Y [m]")
+    ax.set_zlabel("Z [m]")
+ 
+    plt.gca().set_box_aspect((5, 4, 2))
+    ax.set_title('Three UAVs Trajectories Simulation')
+    ax.legend()
+    ax.axis('off')
     plt.show()
 
 
 if __name__ == '__main__':
-    # plot()
-    # plot_states("2023-02-15-21-55-34")
+    # bag2csv('bag_no_gate.bag')
+    # plot_states("2023-02-26-15-41-45", "2023-02-26-15-37-49")
     # plot_states("2023-02-15-21-54-18")
-    plot_3d("2023-02-11-16-31-27", "2023-02-11-16-31-28")
+    # plot_3d("2023-02-26-15-41-45", "2023-02-26-15-37-49")
+    # plot_sim_five("bag_no_gate")
