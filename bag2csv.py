@@ -7,6 +7,7 @@ from matplotlib import pyplot as plt
 from bagpy import bagreader
 from mpl_toolkits.mplot3d import Axes3D  # 导入库
 from matplotlib.backends.backend_pdf import PdfPages
+from matplotlib import font_manager
 
 columns = ["Time",
            "pose.position.x",
@@ -211,7 +212,174 @@ def plot_states(bag, bag2):
     
     # plt.show()
 
+def plot_vel_simluation(bag): 
+    df = pd.read_csv(bag + "uav1-mavros-local_position-velocity_local.csv", usecols=columns3)
+    df2 = pd.read_csv(bag + "uav2-mavros-local_position-velocity_local.csv", usecols=columns3)  
+    df3 = pd.read_csv(bag + "uav3-mavros-local_position-velocity_local.csv", usecols=columns3)
+    df4 = pd.read_csv(bag + "uav4-mavros-local_position-velocity_local.csv", usecols=columns3)   
+    df5 = pd.read_csv(bag + "uav5-mavros-local_position-velocity_local.csv", usecols=columns3)
 
+
+    df = df.rename(columns={"twist.linear.x": 'vx',
+                            "twist.linear.y": 'vy',
+                            "twist.linear.z": 'vz'})
+
+    df2 = df2.rename(columns={"twist.linear.x": 'vx',
+                            "twist.linear.y": 'vy',
+                            "twist.linear.z": 'vz'})
+
+    df3 = df3.rename(columns={"twist.linear.x": 'vx',
+                            "twist.linear.y": 'vy',
+                            "twist.linear.z": 'vz'})
+
+    df4 = df4.rename(columns={"twist.linear.x": 'vx',
+                            "twist.linear.y": 'vy',
+                            "twist.linear.z": 'vz'})
+
+    df5 = df5.rename(columns={"twist.linear.x": 'vx',
+                            "twist.linear.y": 'vy',
+                            "twist.linear.z": 'vz'})
+    velx = []
+    vely = []
+    velz = []
+    velx2 = []
+    vely2 = []
+    velz2 = []
+    velx3 = []
+    vely3 = []
+    velz3 = []
+    velx4 = []
+    vely4 = []
+    velz4 = []
+    velx5 = []
+    vely5 = []
+    velz5 = []
+
+
+    ##################################
+    for i in range(1, len(df)):
+        velx.append(df.vx[i])
+        vely.append(df.vy[i])
+        velz.append(df.vz[i])
+    
+    for i in range(1, len(df2)):
+        velx2.append(df2.vx[i])
+        vely2.append(df2.vy[i])
+        velz2.append(df2.vz[i])
+
+    for i in range(1, len(df3)):
+        velx3.append(df3.vx[i])
+        vely3.append(df3.vy[i])
+        velz3.append(df3.vz[i])
+
+    for i in range(1, len(df4)):
+        velx4.append(df4.vx[i])
+        vely4.append(df4.vy[i])
+        velz4.append(df4.vz[i])
+    
+    for i in range(1, len(df5)):
+        velx5.append(df5.vx[i])
+        vely5.append(df5.vy[i])
+        velz5.append(df5.vz[i])
+    for i in range(1115):
+        velx.pop(0)
+        velx2.pop(0)
+        velx3.pop(0)
+        velx4.pop(0)
+        velx5.pop(0)
+        vely.pop(0)
+        vely2.pop(0)
+        vely3.pop(0)
+        vely4.pop(0)
+        vely5.pop(0)
+        velz.pop(0)
+        velz2.pop(0)
+        velz3.pop(0)
+        velz4.pop(0)
+        velz5.pop(0)
+        
+        
+    velx  =velx[0:400]
+    velx2 =velx2[0:400] 
+    velx3 =velx3[0:400] 
+    velx4 =velx4[0:400] 
+    velx5 =velx5[0:400] 
+    vely  =vely[0:400] 
+    vely2 =vely2[0:400] 
+    vely3 =vely3[0:400] 
+    vely4 =vely4[0:400] 
+    vely5 =vely5[0:400] 
+    velz  =velz[0:400]
+    velz2 =velz2[0:400] 
+    velz3 =velz3[0:400] 
+    velz4 =velz4[0:400] 
+    velz5 =velz5[0:400] 
+    
+    color1 = (75, 102, 173)
+    color2 = (98, 190, 166)
+    color3 = (205, 234, 157)
+    color4 = (253, 186, 107)
+    color5 = (235, 96, 70)
+    
+    sns.set_theme(style="whitegrid", font_scale=2)
+    # sns.set()
+    # plt.subplot(311)
+    # plt.plot(range(len(velx )), velx, color=np.array(color1)/255.0)
+    # plt.plot(range(len(velx2)), velx2, color=np.array(color2)/255.0)
+    # plt.plot(range(len(velx3)), velx3, color=np.array(color3)/255.0)
+    # plt.plot(range(len(velx4)), velx4, color=np.array(color4)/255.0)
+    # plt.plot(range(len(velx5)), velx5, color=np.array(color5)/255.0)
+    # plt.subplot(312)
+    # plt.plot(range(len(vely )), vely, color=np.array(color1)/255.0 )
+    # plt.plot(range(len(vely2)), vely2, color=np.array(color2)/255.0)
+    # plt.plot(range(len(vely3)), vely3, color=np.array(color3)/255.0)
+    # plt.plot(range(len(vely4)), vely4, color=np.array(color4)/255.0)
+    # plt.plot(range(len(vely5)), vely5, color=np.array(color5)/255.0)
+    # plt.subplot(313)
+    # plt.plot(range(len(velz )), velz, color=np.array(color1)/255.0 )
+    # plt.plot(range(len(velz2)), velz2, color=np.array(color2)/255.0)
+    # plt.plot(range(len(velz3)), velz3, color=np.array(color3)/255.0)
+    # plt.plot(range(len(velz4)), velz4, color=np.array(color4)/255.0)
+    # plt.plot(range(len(velz5)), velz5, color=np.array(color5)/255.0)
+    # plt.figure()
+    fig, ax = plt.subplots(3,1)
+    
+    sns.set_style("whitegrid")
+    sns.set()
+
+    sns.kdeplot(velx , ax=ax[0], color=np.array(color1)/255.0,linewidth=4, label='Quadrotor 1')
+    sns.kdeplot(velx2, ax=ax[0], color=np.array(color2)/255.0,linewidth=4, label='Quadrotor 2')
+    sns.kdeplot(velx3, ax=ax[0], color=np.array(color3)/255.0,linewidth=4, label='Quadrotor 3')
+    sns.kdeplot(velx4, ax=ax[0], color=np.array(color4)/255.0,linewidth=4, label='Quadrotor 4')
+    sns.kdeplot(velx5, ax=ax[0], color=np.array(color5)/255.0,linewidth=4, label='Quadrotor 5')
+    
+    
+    # sns.kdeplot([item + 100 for item in velx ], ax=ax[0])
+    # sns.kdeplot([item + 100 for item in velx2], ax=ax[0])
+    # sns.kdeplot([item + 100 for item in velx3], ax=ax[0])
+    # sns.kdeplot([item + 100 for item in velx4], ax=ax[0])
+    # sns.kdeplot([item + 100 for item in velx5], ax=ax[0])
+    
+    # plt.subplot(312)
+    sns.kdeplot(vely , ax=ax[1], color=np.array(color1)/255.0,linewidth=4)
+    sns.kdeplot(vely2, ax=ax[1], color=np.array(color2)/255.0,linewidth=4)
+    sns.kdeplot(vely3, ax=ax[1], color=np.array(color3)/255.0,linewidth=4)
+    sns.kdeplot(vely4, ax=ax[1], color=np.array(color4)/255.0,linewidth=4)
+    sns.kdeplot(vely5, ax=ax[1], color=np.array(color5)/255.0,linewidth=4)
+    
+    # plt.subplot(313)
+    sns.kdeplot(velz  , ax=ax[2], color=np.array(color1)/255.0,linewidth=4)
+    sns.kdeplot(velz2 , ax=ax[2], color=np.array(color2)/255.0,linewidth=4)
+    sns.kdeplot(velz3 , ax=ax[2], color=np.array(color3)/255.0,linewidth=4)
+    sns.kdeplot(velz4 , ax=ax[2], color=np.array(color4)/255.0,linewidth=4)
+    sns.kdeplot(velz5 , ax=ax[2], color=np.array(color5)/255.,linewidth=4)
+    
+    fig.legend()
+    # plt.xlabel("t")
+    # plt.ylabel("velocity")
+    plt.show()
+            
+            
 def plot_3d(bag1, bag2):  # 2023-02-11-16-31-27 2023-02-11-16-31-28
     columns = ["Time",
                "pose.position.x",
@@ -310,17 +478,23 @@ def plot_3d(bag1, bag2):  # 2023-02-11-16-31-27 2023-02-11-16-31-28
     # plt.title('Trajectory')
     # plt.legend()
     # plt.show()
+
     fig = plt.figure()
     ax = Axes3D(fig)
     ax.view_init(elev=13, azim=60)
-    ax.plot3D(posx, posy, posz, 'tomato', linewidth=4, label='UAV0')
-    ax.plot3D(setx, sety, setz,'dodgerblue', linewidth=4, label='UAV1')
-    ax.text3D(0, -0.25, 2, "Gate1", fontsize=15)
-    ax.text3D(1.2, 0, 2, "Gate2", fontsize=15)
+    ax.plot3D(posx, posy, posz, 'tomato', linewidth=8, label='Quadrotor 1')
+    ax.plot3D(setx, sety, setz,'dodgerblue', linewidth=8, label='Quadrotor 2')
+    ax.text3D(0, -0.25, 2, "Gate1", fontsize=30)
+    ax.text3D(0.6, -0.75, 2, "Gate2", fontsize=30)
+    ax.text3D(0.8, 0.25, 2, "Gate3", fontsize=30)
     ax.plot3D([-0.3, -0.3, -0.3, -0.3, -0.3], [-0.5, 0, 0, -0.5, -0.5], [1, 1, 2, 2, 1], 'orange', linewidth=8)
     ax.plot3D([-0.3, -0.3, -0.3, -0.3, -0.3], [-0.5, 0, 0, -0.5, -0.5], [1, 1, 2, 2, 1], 'orange', linewidth=8)
-    ax.plot3D([0.8, 1.5, 1.5, 0.8, 0.8], [0, 0, 0, 0, 0], [1, 1, 2, 2, 1], 'orange', linewidth=8)
-    ax.plot3D([0.8, 1.5, 1.5, 0.8, 0.8], [0, 0, 0, 0, 0], [1, 1, 2, 2, 1], 'orange', linewidth=8)
+    # ax.plot3D([0.8, 1.5, 1.5, 0.8, 0.8], [0, 0, 0, 0, 0], [1, 1, 2, 2, 1], 'orange', linewidth=8)
+    # ax.plot3D([0.8, 1.5, 1.5, 0.8, 0.8], [0, 0, 0, 0, 0], [1, 1, 2, 2, 1], 'orange', linewidth=8)
+    ax.plot3D([0.6, 0.6, 0.6, 0.6, 0.6], [-1, -0.5, -0.5, -1, -1], [1, 1, 2, 2, 1], 'orange', linewidth=8)
+    ax.plot3D([0.6, 0.6, 0.6, 0.6, 0.6], [-1, -0.5, -0.5, -1, -1], [1, 1, 2, 2, 1], 'orange', linewidth=8)
+    ax.plot3D([0.8, 0.8, 0.8, 0.8, 0.8], [0.5, 0, 0, 0.5, 0.5], [1, 1, 2, 2, 1], 'orange', linewidth=8)
+    ax.plot3D([0.8, 0.8, 0.8, 0.8, 0.8], [0.5, 0, 0, 0.5, 0.5], [1, 1, 2, 2, 1], 'orange', linewidth=8)
 
 
     x = np.linspace(-2.3, 2.3, 9)
@@ -350,12 +524,12 @@ def plot_3d(bag1, bag2):  # 2023-02-11-16-31-27 2023-02-11-16-31-28
 
     ax.scatter3D(posx[0], posy[0], posz[0], linewidth=2)
     ax.scatter3D(setx[0], sety[0], setz[0], linewidth=2)
-    ax.text3D(posx[0]+0.2, posy[0]+0.2, posz[0]+0.2, "start", fontsize=20)
-    ax.text3D(setx[0], sety[0], setz[0], "start", fontsize=20)
+    ax.text3D(posx[0]+0.2, posy[0]+0.2, posz[0]+0.2, "start", fontsize=30)
+    ax.text3D(setx[0], sety[0], setz[0], "start", fontsize=30)
     ax.scatter3D(posx[len(posx)-1], posy[len(posy)-1], posz[len(posz)-1], linewidth=2)
     ax.scatter3D(setx[len(setx)-1], sety[len(sety)-1], setz[len(setz)-1], linewidth=2)
-    ax.text3D(posx[len(posx)-1], posy[len(posy)-1], posz[len(posz)-1], "end", fontsize=20)
-    ax.text3D(setx[len(setx)-1], sety[len(sety)-1], setz[len(setz)-1], "end", fontsize=20)
+    ax.text3D(posx[len(posx)-1], posy[len(posy)-1], posz[len(posz)-1], "end", fontsize=30)
+    ax.text3D(setx[len(setx)-1], sety[len(sety)-1], setz[len(setz)-1], "end", fontsize=30)
     
     ax.w_xaxis.set_pane_color((1.0, 1.0, 1, 1))
     ax.w_zaxis.set_pane_color((1.0, 1.0, 1, 1))
@@ -363,15 +537,14 @@ def plot_3d(bag1, bag2):  # 2023-02-11-16-31-27 2023-02-11-16-31-28
     
     # ax.annotate('text', xy=(posx[0], posy[0]), arrowprops=dict(arrowstyle="->", connectionstyle="arc3"))
     ax.set_xlim(-2.3, 2.3)
-    ax.set_xlabel("X [m]")
+    ax.set_xlabel("X [m]", fontsize=20)
     ax.set_ylim(-1.3, 1.3)
-    ax.set_ylabel("Y [m]")
+    ax.set_ylabel("Y [m]", fontsize=20)
     ax.set_zlim(0, 2.5)
-    ax.set_zlabel("Z [m]")
+    ax.set_zlabel("Z [m]", fontsize=20)
     
-    ax.set_title('Two UAVs Trajectories')
-    
-    ax.legend()
+    # ax.set_title('Two UAVs Trajectories')
+    ax.legend(fontsize=30)
     plt.gca().set_box_aspect((3, 2, 0.5))
     # plt.axis('off')
 
@@ -588,13 +761,17 @@ def plot_sim_five(bag):
     # del pos3x[1280:1401]
     # del pos3y[1280:1401]
     # del pos3z[1280:1401]
-    
+    color1 = (75, 102, 173)
+    color2 = (98, 190, 166)
+    color3 = (205, 234, 157)
+    color4 = (253, 186, 107)
+    color5 = (235, 96, 70)
     # ax.get_proj = lambda: np.dot(Axes3D.get_proj(ax), np.diag([1.8, 1.8, 0.5, 1]))
-    ax.plot3D(posx, posy, posz, 'red', linewidth=3, label='UAV1', alpha=0.8)
-    ax.plot3D(pos2x, pos2y, pos2z, 'steelblue', linewidth=3, label='UAV2', alpha=0.8)# dodgerbluetomato
-    ax.plot3D(pos3x, pos3y, pos3z, 'gray', linewidth=3, label='UAV3', alpha=0.8)
-    ax.plot3D(pos4x, pos4y, pos4z, 'yellow', linewidth=3, label='UAV4', alpha=0.8)
-    ax.plot3D(pos5x, pos5y, pos5z, 'green', linewidth=3, label='UAV5', alpha=0.8)# dodgerbluetomato
+    ax.plot3D(posx, posy, posz, color=np.array(color1)/255.0, linewidth=3, label='Quadrotor 1', alpha=0.8)
+    ax.plot3D(pos2x, pos2y, pos2z, color=np.array(color2)/255.0, linewidth=3, label='Quadrotor 2', alpha=0.8)# dodgerbluetomato
+    ax.plot3D(pos3x, pos3y, pos3z, color=np.array(color3)/255.0, linewidth=3, label='Quadrotor 3', alpha=0.8)
+    ax.plot3D(pos4x, pos4y, pos4z, color=np.array(color4)/255.0, linewidth=3, label='Quadrotor 4', alpha=0.8)
+    ax.plot3D(pos5x, pos5y, pos5z, color=np.array(color5)/255.0, linewidth=3, label='Quadrotor 5', alpha=0.8)# dodgerbluetomato
 
 
     x = np.linspace(10, 45, 2)
@@ -615,14 +792,14 @@ def plot_sim_five(bag):
     # ax.plot3D([33, 37, 37, 33, 33], [30, 30, 30, 30, 30], [3, 3, 5, 5, 3], 'darkred', linewidth=8)
     # ax.plot3D([0.5, 1.5, 1.5, 0.5, 0.5], [0, 0, 0, 0, 0], [1, 1, 2, 2, 1], 'darkred', linewidth=8)
 
-    ax.set_xlabel("X [m]")
-    ax.set_ylabel("Y [m]")
-    ax.set_zlabel("Z [m]")
+    ax.set_xlabel("X [m]", fontsize=30)
+    ax.set_ylabel("Y [m]", fontsize=30)
+    ax.set_zlabel("Z [m]", fontsize=30)
  
     plt.gca().set_box_aspect((5, 4, 2))
-    ax.set_title('Three UAVs Trajectories Simulation')
-    ax.legend()
-    ax.axis('off')
+    # ax.set_title('Three UAVs Trajectories Simulation')
+    ax.legend(fontsize=20)
+    # ax.axis('off')
     plt.show()
 
 
@@ -632,3 +809,4 @@ if __name__ == '__main__':
     # plot_states("2023-02-15-21-54-18")
     # plot_3d("2023-02-26-15-41-45", "2023-02-26-15-37-49")
     # plot_sim_five("bag_no_gate")
+    plot_vel_simluation("bag_no_gate/")
